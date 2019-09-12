@@ -1,0 +1,35 @@
+{
+  "name": "key-handler",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/KeyHandler.js",
+  "scripts": {
+    "coverage": "nyc --reporter lcov --reporter text npm test",
+    "lint": "eslint . && prettier --check '**/*.js'",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Alex J Burke @alexjeffburke <ajb@one.com>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha": "^6.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jsdom": "^15.1.1",
+    "mocha": "^6.2.0",
+    "mocha-dominate": "^0.1.1",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "sinon": "^7.4.2",
+    "unexpected": "^11.8.0",
+    "unexpected-sinon": "^10.11.2"
+  },
+  "dependencies": {
+    "mousetrap": "^1.6.3"
+  }
+}
