@@ -1,5 +1,8 @@
 # KeyHandler
 
+[![NPM version](https://badge.fury.io/js/key-handler.svg)](http://badge.fury.io/js/key-handler)
+[![Build Status](https://travis-ci.org/One-com/key-handler.svg?branch=master)](https://travis-ci.org/One-com/key-handler)
+
 This module is a small wrapper around
 [mousetrap](https://github.com/ccampbell/mousetrap)
 that adds support for named key handling zones in a page.
