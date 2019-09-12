@@ -13,7 +13,7 @@ A key handler is created by instantiating it passing a
 top-level target element to whcih it will bind events:
 
 ```js
-var keyHandler = new KeyHandler("document");
+var keyHandler = new KeyHandler(document);
 ```
 
 From that point forward it is available to have keys
