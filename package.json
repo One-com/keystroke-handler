@@ -10,6 +10,7 @@
   },
   "keywords": [],
   "author": "Alex J Burke @alexjeffburke <ajb@one.com>",
+  "repository": "git://github.com/One-com/key-handler",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "eslint": "^6.3.0",
