@@ -31,6 +31,14 @@ function createMouseEvent(options) {
   return event;
 }
 
+var delay = function(ms) {
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve();
+    }, ms);
+  });
+};
+
 function mouseDown(testElement, selector) {
   var element = testElement.querySelector(selector);
   if (!element) {
@@ -142,6 +150,51 @@ describe("key-handler", function() {
         "to be",
         testElement.querySelector("#secondDomain>input")
       );
+    });
+  });
+
+  describe("handles data-keydomain focus locking", function() {
+    var testElement;
+    var keyhandler;
+    var clock;
+
+    beforeEach(function() {
+      clock = sinon.useFakeTimers();
+      testElement = document.createElement("DIV");
+      testElement.innerHTML =
+        '<div id="test">' +
+        '  <div id="firstDomain" data-keydomain="first"><p></p></div>' +
+        '  <div id="secondDomain" data-keydomain="second" data-keydomain-focus="input" data-keydomain-focus-lock="true">' +
+        '    <input id="secondDomainInput" type="text">' +
+        "  </div>" +
+        '  <div id="thirdDomain" data-keydomain="third" data-keydomain-focus="p" data-keydomain-focus-lock="true"><p></p></div>' +
+        "</div>";
+      keyhandler = new KeyHandler(testElement);
+    });
+
+    afterEach(function() {
+      testElement.remove();
+      clock.restore();
+    });
+
+    describe("when the focus is locked", function() {
+      it("should correctly update the last focused", function() {
+        keyhandler.focusDomain("second");
+
+        expect(
+          keyhandler._lastFocused,
+          "to be",
+          testElement.querySelector("#secondDomain>input")
+        );
+
+        keyhandler.focusDomain("third");
+
+        expect(
+          keyhandler._lastFocused,
+          "to be",
+          testElement.querySelector("#thirdDomain>p")
+        );
+      });
     });
   });
 
