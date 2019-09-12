@@ -31,14 +31,6 @@ function createMouseEvent(options) {
   return event;
 }
 
-var delay = function(ms) {
-  return new Promise(function(resolve) {
-    setTimeout(function() {
-      resolve();
-    }, ms);
-  });
-};
-
 function mouseDown(testElement, selector) {
   var element = testElement.querySelector(selector);
   if (!element) {
