@@ -1,11 +1,14 @@
-# KeyHandler
+# KeystrokeHandler
 
-[![NPM version](https://badge.fury.io/js/key-handler.svg)](http://badge.fury.io/js/key-handler)
-[![Build Status](https://travis-ci.org/One-com/key-handler.svg?branch=master)](https://travis-ci.org/One-com/key-handler)
+This module provides support for binding keys to named areas
+within applications.
+
+[![NPM version](https://badge.fury.io/js/keystroke-handler.svg)](http://badge.fury.io/js/keystroke-handler)
+[![Build Status](https://travis-ci.org/One-com/keystroke-handler.svg?branch=master)](https://travis-ci.org/One-com/keystroke-handler)
 
 This module is a small wrapper around
 [mousetrap](https://github.com/ccampbell/mousetrap)
-that adds support for named key handling zones in a page.
+library that handles the named areas and corresponding keys.
 
 # Use
 
@@ -13,7 +16,9 @@ A key handler is created by instantiating it passing a
 top-level target element to whcih it will bind events:
 
 ```js
-var keyHandler = new KeyHandler(document);
+var KeystrokeHandler = require("keystroke-handler");
+
+var keyHandler = new KeystrokeHandler(document);
 ```
 
 From that point forward it is available to have keys
@@ -70,5 +75,5 @@ Destroy a domain and all its associated key bindings.
 
 # License
 
-KeyHandler is licensed under a standard 3-clause BSD license -- see
+KeystrokeHandler is licensed under a standard 3-clause BSD license -- see
 the `LICENSE`-file for details.
